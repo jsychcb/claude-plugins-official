@@ -48,11 +48,8 @@ jobs:
       - uses: actions/checkout@v4
 
       # createCommitOnBranch-based bump so commits are signed by GitHub and
-      # satisfy the org-level required_signatures ruleset on main. The pin
-      # below tracks a feature branch of the bump-plugin-shas action that
-      # adds the `pr-mode: per-entry` input — re-pin to the merge SHA after
-      # that change lands on the action's main.
-      - uses: anthropics/claude-plugins-community/.github/actions/bump-plugin-shas@18397a37723195b6586a37567b9ca554e99e22db
+      # satisfy the org-level required_signatures ruleset on main.
+      - uses: anthropics/claude-plugins-community/.github/actions/bump-plugin-shas@e2019b2a01f11aa1484c53540b1cfab5eebbc299
         id: bump
         with:
           marketplace-path: .claude-plugin/marketplace.json

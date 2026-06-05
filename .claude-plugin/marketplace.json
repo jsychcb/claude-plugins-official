@@ -1151,6 +1151,20 @@
       "homepage": "https://github.com/firecrawl/firecrawl-claude-plugin.git"
     },
     {
+      "name": "firestore-native",
+      "description": "Connect and interact with Firestore databases, collections, and documents.",
+      "author": {
+        "name": "Google LLC"
+      },
+      "category": "database",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/gemini-cli-extensions/firestore-native.git",
+        "sha": "f88103bd0ccfe9e1e7a3a7d849de26d197978c9a"
+      },
+      "homepage": "https://github.com/gemini-cli-extensions/firestore-native"
+    },
+    {
       "name": "forge-skills",
       "description": "Forge-focused skills and MCP configuration for Atlassian Forge: scaffold and deploy apps (forge create, templates, dev spaces), build Teamwork Graph connectors for Rovo Search/Rovo Chat, pre-deploy review, systematic debugging, plus Forge docs and Atlassian Design System lookups via MCP.",
       "author": {

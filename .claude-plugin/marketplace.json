@@ -820,6 +820,20 @@
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/commit-commands"
     },
     {
+      "name": "confidence",
+      "description": "Access Confidence feature flags, experiments, and migration tools directly from Claude Code.",
+      "author": {
+        "name": "Spotify Confidence"
+      },
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/spotify/confidence-ai-plugins.git",
+        "sha": "2da1d97dfb319335d9d85f9da8c090c82d296a60"
+      },
+      "homepage": "https://confidence.spotify.com"
+    },
+    {
       "name": "context7",
       "description": "Upstash Context7 MCP server for up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
       "category": "development",

@@ -45,19 +45,22 @@ function liveReposOf(base) {
 }
 
 // Pure decision over an already-computed diff. Returns { ok, problems, added, removed, modified }.
-function analyze({ changedFiles, base, head }) {
+// before = plugins at the MERGE-BASE (what head forked from), after = plugins at HEAD,
+// liveRepos = repos already live on the current base branch. Diffing before->after (not
+// base-tip->head) isolates THIS PR's changes; a stale fork no longer shows main's later
+// additions as phantom removals.
+function analyze({ changedFiles, before, after, liveRepos }) {
   const problems = [];
 
   const off = changedFiles.filter(n => n !== MARKETPLACE);
   if (off.length) problems.push(`changes files other than ${MARKETPLACE}: ${off.join(', ')}`);
 
-  const liveRepos = liveReposOf(base);
-  const baseNames = new Set(Object.keys(base));
-  const headNames = new Set(Object.keys(head));
+  const baseNames = new Set(Object.keys(before));
+  const headNames = new Set(Object.keys(after));
   const removed = [...baseNames].filter(n => !headNames.has(n));
   const added = [...headNames].filter(n => !baseNames.has(n));
   const modified = [...headNames].filter(
-    n => baseNames.has(n) && JSON.stringify(base[n]) !== JSON.stringify(head[n])
+    n => baseNames.has(n) && JSON.stringify(before[n]) !== JSON.stringify(after[n])
   );
 
   if (removed.length)  problems.push(`removes existing entr${removed.length > 1 ? 'ies' : 'y'}: ${removed.join(', ')}`);
@@ -67,7 +70,7 @@ function analyze({ changedFiles, base, head }) {
   }
 
   for (const name of added) {
-    const u = head[name] && head[name].source && head[name].source.url;
+    const u = after[name] && after[name].source && after[name].source.url;
     if (!u) { problems.push(`added "${name}" has no source.url to validate`); continue; }
     const r = normalizeRepo(u);
     if (r.split('/').length < 3) { problems.push(`added "${name}" source.url ${u} is not a valid repo URL`); continue; }
@@ -98,13 +101,24 @@ async function evaluate({ github, context }) {
   });
   const changedFiles = files.map(f => f.filename);
 
-  const base = await readPlugins(github, owner, repo, pr.base.sha);
-  const head = await readPlugins(github, pr.head.repo.owner.login, pr.head.repo.name, pr.head.sha);
-  if (base === null || head === null) {
-    return { ok: false, problems: ['could not read marketplace.json at base and/or head'], added: [], removed: [], modified: [] };
+  // Diff THIS PR's changes (merge-base -> head), not base-tip -> head, so a fork that is
+  // behind main doesn't show main's later additions as phantom removals.
+  let mergeBaseSha = pr.base.sha;
+  try {
+    const cmp = await github.rest.repos.compareCommits({ owner, repo, base: pr.base.sha, head: pr.head.sha });
+    if (cmp && cmp.data && cmp.data.merge_base_commit && cmp.data.merge_base_commit.sha) {
+      mergeBaseSha = cmp.data.merge_base_commit.sha;
+    }
+  } catch (e) { /* fall back to base.sha */ }
+
+  const liveBase = await readPlugins(github, owner, repo, pr.base.sha);          // current base branch (for "already live")
+  const before = await readPlugins(github, owner, repo, mergeBaseSha);            // what head forked from
+  const after = await readPlugins(github, pr.head.repo.owner.login, pr.head.repo.name, pr.head.sha);
+  if (liveBase === null || before === null || after === null) {
+    return { ok: false, problems: ['could not read marketplace.json at base, merge-base, and/or head'], added: [], removed: [], modified: [] };
   }
 
-  return analyze({ changedFiles, base, head });
+  return analyze({ changedFiles, before, after, liveRepos: liveReposOf(liveBase) });
 }
 
 module.exports = { normalizeRepo, liveReposOf, analyze, readPlugins, evaluate, MARKETPLACE };

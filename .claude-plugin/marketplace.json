@@ -1119,6 +1119,17 @@
       "homepage": "https://github.com/microsoft/Dataverse-skills"
     },
     {
+      "name": "deepeval",
+      "description": "DeepEval",
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/confident-ai/deepeval.git",
+        "sha": "82224d73366c792935d72f80e4762d2b096889db"
+      },
+      "homepage": "https://github.com/confident-ai/deepeval"
+    },
+    {
       "name": "deploy-on-aws",
       "description": "Deploy applications to AWS with architecture recommendations, cost estimates, and IaC deployment.",
       "category": "deployment",

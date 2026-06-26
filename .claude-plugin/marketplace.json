@@ -3131,6 +3131,20 @@
       "homepage": "https://www.vibeprospecting.ai/product/claude-plugin"
     },
     {
+      "name": "vsql-extension-builder",
+      "description": "Builds a VillageSQL extension for MySQL end-to-end through a 7-phase persona-driven workflow. Commonly used to port PostgreSQL extensions to MySQL.",
+      "author": {
+        "name": "VillageSQL"
+      },
+      "category": "database",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/villagesql/villagesql-skills.git",
+        "sha": "b2ab4f21b87ce86e9288df22f8798c9392043a7b"
+      },
+      "homepage": "https://villagesql.com"
+    },
+    {
       "name": "windsor-ai",
       "description": "Connect Claude Code to 325+ business data sources via Windsor.ai. Query marketing, sales, CRM, ecommerce, finance, and analytics data from Google Ads, Meta, HubSpot, Salesforce, Shopify, Stripe, and hundreds more — directly from your terminal.",
       "author": {

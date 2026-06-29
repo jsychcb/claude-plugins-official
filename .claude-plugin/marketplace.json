@@ -3319,6 +3319,20 @@
         "sha": "6b6c44cfe3c4e00860401a697d401dcb3b6e3737"
       },
       "homepage": "https://langfuse.com"
+    },
+    {
+      "name": "zyte-web-data",
+      "description": "Web scraping skills for Claude Code powered by the Zyte API — scrape sites, generate and run Scrapy spiders, define extraction schemas, and ship to Scrapy Cloud.",
+      "author": {
+        "name": "Zyte"
+      },
+      "category": "automation",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/zytedata/claude-skills.git",
+        "sha": "7f9d853e65c917692142c5813b7442787544ca95"
+      },
+      "homepage": "https://www.zyte.com"
     }
   ]
 }

@@ -599,7 +599,7 @@
         "url": "https://github.com/carta/plugins.git",
         "path": "plugins/carta-investors",
         "ref": "main",
-        "sha": "ea2f3ad9396209a52aa41e7585ffeab424b55905"
+        "sha": "c3b215afca71e5fd3b607fb6b558a85c23272d59"
       },
       "homepage": "https://carta.com"
     },
@@ -920,7 +920,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/get-convex/convex-backend-skill.git",
-        "sha": "bb4275f38abc4aa7196b936be756d2811dc4b4fc"
+        "sha": "498fbd4c4e95796d9e5150fc23a3b7b37a32094b"
       },
       "homepage": "https://github.com/get-convex/convex-backend-skill",
       "keywords": [
@@ -1022,7 +1022,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/gemini-cli-extensions/data-agent-kit-starter-pack.git",
-        "sha": "b5bc330f03758618e63cecd8e47c5f1ac87af2c1"
+        "sha": "e1922d8efb1770ed54d7a9758d3a5f7863b1f5a6"
       },
       "homepage": "https://github.com/gemini-cli-extensions/data-agent-kit-starter-pack"
     },
@@ -1565,7 +1565,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/heygen-com/hyperframes.git",
-        "sha": "9c4d9e50a01e0e139d95a80f6c2216867036d905"
+        "sha": "1d4c5d5ec3e10d8323647aa319c852d43599255a"
       },
       "homepage": "https://hyperframes.heygen.com"
     },
@@ -1963,7 +1963,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/mergifyio/mergify-cli.git",
-        "sha": "c7db849f764fcb61c9d2e57a2d1a78558abb9d79"
+        "sha": "d754c783f28d8a32f0dc60832b994a99b8f81f22"
       },
       "homepage": "https://mergify.com"
     },
@@ -1990,7 +1990,7 @@
         "url": "https://github.com/awslabs/startups.git",
         "path": "migrate/plugins/migration-to-aws",
         "ref": "main",
-        "sha": "bc9b127a4d1a20d4e4dbd7040635c1ced74506b1"
+        "sha": "57d367d2147b67d75b18c80df105c13e520008df"
       },
       "homepage": "https://github.com/awslabs/startups"
     },
@@ -2834,7 +2834,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/getsentry/plugin-claude.git",
-        "sha": "bc2c66623c71cd4800bb305cff4a1f86c0b2b97d"
+        "sha": "3f5163a56b727f4e60d1bbf7441a35f1c1d9ab87"
       },
       "homepage": "https://github.com/getsentry/plugin-claude"
     },
@@ -3268,7 +3268,7 @@
         "url": "https://github.com/val-town/plugins.git",
         "path": "plugin",
         "ref": "main",
-        "sha": "80cc05b9229aaec38b5da5e9d33d9898e1e614cd"
+        "sha": "1bd1c3f93161d88908dc0838aa81980ff1b2e4f7"
       },
       "homepage": "https://val.town"
     },
@@ -3360,7 +3360,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/wix/skills.git",
-        "sha": "7e0057170aa87c4db832e38c725ac24c59a60a01"
+        "sha": "320c8affaa42ad0a7cee5fa7e020926677ec63a5"
       },
       "homepage": "https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"
     },
@@ -3481,7 +3481,7 @@
       "source": {
         "source": "url",
         "url": "https://github.com/langfuse/skills.git",
-        "sha": "17f5ac0f75ae337035620c70f338b9c188947a2f"
+        "sha": "d48c5b8b434dc34550053699e8403c23f231446d"
       },
       "homepage": "https://langfuse.com"
     },
